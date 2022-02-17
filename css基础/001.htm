@@ -1,0 +1,158 @@
+<HTML>
+<HEAD>
+    <meta lang="zh-cn"/>
+    <meta charset="utf-8"/>
+    <META NAME="GENERATOR" Content="Microsoft Visual Studio">
+    <TITLE>001</TITLE>
+    <style>
+        p {
+            /*字体颜色*/
+            color: red;
+            /*字体大小，单位是像素*/
+            font-size: 36px;
+        }
+        .red {
+            color: red;
+        }
+        #red {
+            color: red;
+        }
+    </style>
+    <link rel="stylesheet" href="003案例.css"/>
+</HEAD>
+<BODY>
+    <h1>css基础：</h1>
+    <p>写在head中，style里</p>
+
+    <h2>基础选择器</h2>
+    <h3>1.标签选择器</h3>
+    标签名{属性}
+    如：div{color……}
+    <p>PS:会选出所有的div,不能只改其中几个</p>
+
+    <h3>2.类选择器</h3>
+    <p>PS:会选出所有的class名相同的标签，类名任取</p>
+    如：.red{color……}
+    <div class="red">变色</div>
+    <div>不变</div>
+    <div>不变</div>
+    <p>还可以使用多个类名，使用方式：class="red ……"</p>
+
+    <a href="002案例.htm"><h3>案例</h3></a>
+
+    <h3>3.id选择器</h3>
+    <p>与上面的类选择器相似，但是只可以调用一次</p>
+    如：#red{color……}
+    <div id="red">变色</div>
+    <div>不变</div>
+    <div>不变</div>
+
+    <h3>4.通配符选择器</h3>
+    <p>给选择器会更改所有标签，使用方法：*{color……}</p>
+    <p>只需要写*就行，不需要在下面的标签部分写东西</p>
+
+    <h2>相关属性</h2>
+    <h3>a.字体：font-family</h3>
+    如：font-family: “微软雅黑”;
+    <h3>b.字体大小：font-size</h3>
+    如：font-size: 20px;
+    <div>标题比较特殊，需要单独修改字体大小</div>
+    <h3>c.字体粗细：font-weight</h3>
+    如：font-weight：700（加粗） 或  400（正常）
+    <h3>d复合属性</h3>
+    <p>font: font-style（字体是否倾斜） font-weight（字体粗细） font-size/line-height（字体大小/行高） font-family（字体）</p>
+    <div>位置不可以改变</div>
+    如： font: initial 700 16px/20px "微软雅黑"；
+    <p>只有font-size和font-family不能省，其他都可以省</p>
+    如：font:16px "微软雅黑"
+
+    <h2>文本属性</h2>
+    <h3>a.文本颜色：color</h3>
+    如：color:#ffoooo;或者color：red；
+    <h3>b.文本对齐：text-align(水平方向)</h3>
+    如：text-align: center;
+    <h3>c.装饰文本：text-decoration(下划线之类的)</h3>
+    如：text-decoration：underline
+    <h3>d.文本缩进：text-indent（首行）</h3>
+    如：text-indent：2em;或者text-indent：20px;
+    <h3>e.行间距：line-height</h3>
+    如：line-height：20px;
+
+    <h2>三种样式表</h2>
+    <h3>a.内部样式表</h3>
+    现在写的就是
+    <h3>b.行内样式表</h3>
+    如：<div style="color: red; font-size: 30px;">行内样式，很少使用</div>
+    <h3>c.外部样式表</h3>
+    <span>外部样式</span>
+    <div>在前面加上link，在css样式表中直接写，不需要style</div>
+    如：<link rel="stylesheet" type="text/css" href="背景.css" />
+
+    <h2>复合选择器</h2>
+    <h3>a.后代选择器</h3>
+    当出现多个子标签时
+    <ul>
+        <li>1</li>
+        <li>2</li>
+        <li>3</li>
+    </ul>
+    <ol>
+        <li>1</li>
+        <li>1</li>
+        <li>1</li>
+    </ol>
+    可以写成ol li {color: pink;}的形式，
+    表示把ol里所有的li标签都选中
+    <h3>b.子元素选择器</h3>
+    当出现多个重复子标签时
+    <div class="a">
+        <a href="#">1</a>
+        <p>
+            <a href="#">2</a>
+        </p>
+    </div>
+    可以写成.a>a {color: pink;}的形式，
+    表示把a类里所有的a标签都选中,而不选中p里的a标签
+    <h3>c.并集选择器</h3>
+    当出现多个标签有相同的要求时
+    <div>1</div>
+    <p>2</p>
+    可以写成div，p {color: pink;}的形式，
+    表示把div和p里的内容都选中
+    <h3>d.伪类选择器</h3>
+    <h4>链接伪类选择器</h4>
+    用法：<a href="#">kong</a>
+    a: link{} <!--选择所有未被选择的链接-->
+    a: visited{} <!--选择所有选择过的链接-->
+    a: hover{} <!--选择鼠标选中的链接-->
+    a: active{} <!--选择活动链接（鼠标按下还未松开）-->
+    <h4>foucs伪类选择器</h4>
+    input：foucs{}<!--光标所在位置-->
+
+    <h2>显示模式转换</h2>
+    如：链接不可以直接扩大或缩小
+    a{display: block;}
+    <div>block是把行内元素转换成块元素，inline是把块元素转换成行内元素，inline-block是转换成行内块元素</div>
+
+    <h2>背景</h2>
+    background-color：red        背景颜色
+    background-image：url(路径)      背景图片
+    background-repeat：repeat（平铺）| no-repeat| repeat-x| repeat-y        背景平铺
+    background-position: center right       背景图片的位置（如果写方位词，则前后两个词的位置可以互换，
+    如果只写一个则另一个默认居中）
+
+    <h2>盒子模型</h2>
+    <h3>a.边框</h3>
+    border-width：5px    边框粗细
+    border-style：     边框样式
+    border-color：     边框颜色
+
+
+
+
+
+
+
+
+</BODY>
+</HTML>
